@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="hind_left_leg">
+  <link
+    name="lower_leg">
+    <inertial>
+      <origin
+        xyz="-0.07061 0.021157 -0.00024084"
+        rpy="0 0 0" />
+      <mass
+        value="0.075618" />
+      <inertia
+        ixx="1.1198E-05"
+        ixy="5.9765E-06"
+        ixz="-4.3856E-07"
+        iyy="9.1627E-05"
+        iyz="1.4979E-08"
+        izz="8.7352E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/goat_hind_leg_description/meshes/lower_leg.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.35" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/goat_hind_leg_description/meshes/lower_leg.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="upper_foot">
+    <inertial>
+      <origin
+        xyz="-0.0124 -7.6556E-08 -0.026966"
+        rpy="0 0 0" />
+      <mass
+        value="0.049333" />
+      <inertia
+        ixx="1.4404E-05"
+        ixy="-1.6619E-11"
+        ixz="-1.1851E-06"
+        iyy="7.3378E-06"
+        iyz="-4.0816E-11"
+        izz="1.2181E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/goat_hind_leg_description/meshes/upper_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/goat_hind_leg_description/meshes/upper_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ankle"
+    type="fixed">
+    <origin
+      xyz="-0.13748 0.0236 -0.0099694"
+      rpy="0 0 0" />
+    <parent
+      link="lower_leg" />
+    <child
+      link="upper_foot" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lower_foot">
+    <inertial>
+      <origin
+        xyz="0.001375 6.8917E-09 -0.016526"
+        rpy="0 0 0" />
+      <mass
+        value="0.040774" />
+      <inertia
+        ixx="6.1564E-06"
+        ixy="-1.2038E-11"
+        ixz="2.0634E-06"
+        iyy="7.2958E-06"
+        iyz="2.2071E-11"
+        izz="4.5849E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/goat_hind_leg_description/meshes/lower_foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://example-robot-data/robots/goat_hind_leg_description/meshes/lower_foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="foot"
+    type="revolute">
+    <origin
+      xyz="-0.023514 0 -0.04393"
+      rpy="0 0 0" />
+    <parent
+      link="upper_foot" />
+    <child
+      link="lower_foot" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.26"
+      upper="0.17"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

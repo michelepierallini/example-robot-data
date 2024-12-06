@@ -1,0 +1,7 @@
+# Controllers for the SoftLeg
+
+# SoftLeg 1
+softleg_1:
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 100 

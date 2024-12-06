@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding='utf-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="softleg_cart">
+
+<!-- MODELS -->
+<xacro:include filename="package://example-robot-data/robots/softleg_description/model/softleg_cart.urdf.xacro"/>
+
+<!-- WORLD -->
+<link name="world">
+</link>
+
+<!-- FOOT 1 -->
+<xacro:softleg_cart name="softleg_1" parent="world">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+</xacro:softleg_cart>
+
+</robot>

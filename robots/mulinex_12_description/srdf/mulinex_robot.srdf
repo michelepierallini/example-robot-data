@@ -1,0 +1,157 @@
+<?xml version="1.0" ?>
+<robot name="mulinex_robot">
+
+    <!-- left front leg -->
+    <group name="lf_leg">
+        <joint name="LF_HAA" /> 
+        <joint name="LF_HFE" /> 
+        <joint name="LF_KFE" />
+        <chain base_link="base_link" tip_link="LF_FOOT" />
+    </group>
+    <!-- right front leg -->
+    <group name="rf_leg">
+        <joint name="RF_HAA" />
+        <joint name="RF_HFE" />
+        <joint name="RF_KFE" />
+        <chain base_link="base_link" tip_link="RF_FOOT" />
+    </group>
+    <!-- left hind leg -->
+    <group name="lh_leg">
+        <joint name="LH_HAA" />
+        <joint name="LH_HFE" />
+        <joint name="LH_KFE" />
+        <chain base_link="base_link" tip_link="LH_FOOT" />
+    </group>
+    <!-- right hind leg -->
+    <group name="rh_leg">
+        <joint name="RH_HAA" />
+        <joint name="RH_HFE" />
+        <joint name="RH_KFE" />
+        <chain base_link="base_link" tip_link="RH_FOOT" />
+    </group>
+    <group name="all_legs">
+        <group name="lf" />
+        <group name="rf" />
+        <group name="lh" />
+        <group name="rh" />
+    </group>
+    <group name="r_legs">
+        <group name="rf" />
+        <group name="rh" />
+    </group>
+    <group name="l_legs">
+        <group name="lf" />
+        <group name="lh" />
+    </group>
+    <group name="f_legs">
+        <group name="lf" />
+        <group name="rf" />
+    </group>
+    <group name="h_legs">
+        <group name="lh" />
+        <group name="rh" />
+    </group>
+    <group name="ld_legs">
+        <group name="lf" />
+        <group name="rh" />
+    </group>
+    <group name="rd_legs">
+        <group name="rf" />
+        <group name="lh" />
+    </group>
+
+    <end_effector name="lf_foot" parent_link="LF_FOOT" group="lf_leg" />
+    <end_effector name="rf_foot" parent_link="RF_FOOT" group="rf_leg" />
+    <end_effector name="lh_foot" parent_link="LH_FOOT" group="lh_leg" />
+    <end_effector name="rh_foot" parent_link="RH_FOOT" group="rh_leg" />
+
+    <!-- <group_state name="standing" group="all_legs">
+        <joint name="root_joint" value="0. 0. 0.235 0. 0. 0. 1." />
+        <joint name="LF_HFE" value="0.8" />
+        <joint name="LF_KFE" value="-1.6" />
+        <joint name="LH_HFE" value="-0.8" />
+        <joint name="LH_KFE" value="1.6" />
+        <joint name="RF_HFE" value="0.8" />
+        <joint name="RF_KFE" value="-1.6" />
+        <joint name="RH_HFE" value="-0.8" />
+        <joint name="RH_KFE" value="1.6" />
+    </group_state> -->
+
+    <group_state name="standing" group="all_legs">
+        <!-- <joint name="root_joint" value="0. 0. 0.34 0. 0. 0. 1." /> -->
+        <joint name="root_joint" value="0. 0. 0.32 0. 0. 0. 1.0" />
+        <joint name="LF_HFE" value="2.0943951" />
+        <joint name="LH_HFE" value="-2.0943951" />
+        <joint name="RF_HFE" value="-2.0943951" />
+        <joint name="RH_HFE" value="2.0943951" />
+        <joint name="LF_KFE" value="-1.04719755," />
+        <joint name="LH_KFE" value="1.04719755," />
+        <joint name="RF_KFE" value="1.0471975" />
+        <joint name="RH_KFE" value="-1.04719755" />
+    </group_state>
+
+    <group_state name="standing_C" group="all_legs">
+        <!-- <joint name="root_joint" value="0. 0. 0.34 0. 0. 0. 1." /> -->
+        <joint name="root_joint" value="0. 0. 0.32 0. 0. 0. 1.0" />
+        <joint name="LF_HAA" value="0." />
+        <joint name="LF_HFE" value="2.0943951" />
+        <joint name="LF_KFE" value="-1.04719755," />
+        <joint name="LH_HAA" value="0." />
+        <joint name="LH_HFE" value="-1.0471975511966"/>
+        <joint name="LH_KFE" value="-1.04719755," />
+        <joint name="RF_HAA" value="0." />
+        <joint name="RF_HFE" value="-2.0943951" />
+        <joint name="RF_KFE" value="1.0471975" />
+        <joint name="RH_HAA" value="0." />
+        <joint name="RH_HFE" value="1.0471975511966" />
+        <joint name="RH_KFE" value="1.04719755" />
+    </group_state>
+
+    <group_state name="straight_standing" group="all_legs">
+        <joint name="root_joint" value="0. 0. 0.235 0. 0. 0. 1." />
+        <joint name="LF_HAA" value="0." />
+        <joint name="LF_HFE" value="0.8" />
+        <joint name="LF_KFE" value="-1.6" />
+        <joint name="LH_HAA" value="0." />
+        <joint name="LH_HFE" value="-0.8" />
+        <joint name="LH_KFE" value="1.6" />
+        <joint name="RF_HAA" value="0." />
+        <joint name="RF_HFE" value="0.8" />
+        <joint name="RF_KFE" value="-1.6" />
+        <joint name="RH_HAA" value="0." />
+        <joint name="RH_HFE" value="-0.8" />
+        <joint name="RH_KFE" value="1.6" />
+    </group_state>
+
+    <!-- <disable_collisions link1="LF_SHOULDER" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="RF_SHOULDER" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="LH_SHOULDER" link2="base_link" reason="Adjacent" />
+    <disable_collisions link1="RH_SHOULDER" link2="base_link" reason="Adjacent" />  -->
+
+    <!-- <disable_collisions link1="LF_UPPER_LEG" link2="LF_SHOULDER" reason="Adjacent" />
+    <disable_collisions link1="RF_UPPER_LEG" link2="RF_SHOULDER" reason="Adjacent" />
+    <disable_collisions link1="LH_UPPER_LEG" link2="LH_SHOULDER" reason="Adjacent" />
+    <disable_collisions link1="RH_UPPER_LEG" link2="RH_SHOULDER" reason="Adjacent" /> -->
+
+    <!-- <disable_collisions link1="LF_LOWER_LEG" link2="LF_UPPER_LEG" reason="Adjacent" />
+    <disable_collisions link1="RF_LOWER_LEG" link2="RF_UPPER_LEG" reason="Adjacent" />
+    <disable_collisions link1="LH_LOWER_LEG" link2="LH_UPPER_LEG" reason="Adjacent" />
+    <disable_collisions link1="RH_LOWER_LEG" link2="RH_UPPER_LEG" reason="Adjacent" /> -->
+
+
+
+    <enable_collisions link1="LF_SHOULDER" link2="base_link" reason="Adjacent" />
+    <enable_collisions link1="RF_SHOULDER" link2="base_link" reason="Adjacent" />
+    <enable_collisions link1="LH_SHOULDER" link2="base_link" reason="Adjacent" />
+    <enable_collisions link1="RH_SHOULDER" link2="base_link" reason="Adjacent" /> 
+
+    <enable_collisions link1="LF_UPPER_LEG" link2="LF_SHOULDER" reason="Adjacent" />
+    <enable_collisions link1="RF_UPPER_LEG" link2="RF_SHOULDER" reason="Adjacent" />
+    <enable_collisions link1="LH_UPPER_LEG" link2="LH_SHOULDER" reason="Adjacent" />
+    <enable_collisions link1="RH_UPPER_LEG" link2="RH_SHOULDER" reason="Adjacent" />
+
+    <enable_collisions link1="LF_LOWER_LEG" link2="LF_UPPER_LEG" reason="Adjacent" />
+    <enable_collisions link1="RF_LOWER_LEG" link2="RF_UPPER_LEG" reason="Adjacent" />
+    <enable_collisions link1="LH_LOWER_LEG" link2="LH_UPPER_LEG" reason="Adjacent" />
+    <enable_collisions link1="RH_LOWER_LEG" link2="RH_UPPER_LEG" reason="Adjacent" />
+</robot> 
