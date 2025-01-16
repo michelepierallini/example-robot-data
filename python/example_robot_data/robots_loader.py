@@ -545,9 +545,15 @@ def loadIris():
 #     path = "goat_hind_leg_description"
 #     urdf_filename = "hind_left_leg.urdf"
 #     urdf_subpath = "urdf"
+
 class GoatLegLoader(RobotLoader):
     path = "goat_leg_description"
     urdf_filename = "goat_leg.urdf"
+    urdf_subpath = "urdf"
+
+class TwoEMACTLoader(RobotLoader):
+    path = "two_dofs_emact_description"
+    urdf_filename = "leg_constrained.urdf"
     urdf_subpath = "urdf"
 
 ROBOTS = {
@@ -593,6 +599,7 @@ ROBOTS = {
     'goatleg': GoatLegLoader,
     'mulinex': MulinexLoader,
     "mulinex12": Mulinex12Loader,
+    'two_emact':TwoEMACTLoader,
 }
 
 
